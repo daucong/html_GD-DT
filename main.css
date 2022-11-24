@@ -241,6 +241,12 @@
     border-radius: 5px;
     position: absolute;
 }
+input[type=text]:focus {
+    border: 1px solid rgb(47, 118, 198);
+}
+input {
+    outline: none;
+}
 .tab_1 {
     position: relative;
 }
@@ -302,9 +308,8 @@
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
-    color: #A8A8A8;
 }
-.img_ma img{
+.captcha_code{
     float: left;
     position: absolute;
     width: 190px;
@@ -312,6 +317,19 @@
     left: 15px;
     top: 122px;
     border-radius: 5px;
+    background-color: white;
+}
+.font_captcha{
+    width: 142px;
+    height: 16px;
+    margin-top: 10px;
+    margin-left: 20px;
+    font-family: 'Bodoni MT Black';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 16px;
+    color: #000000;
 }
 .vector_change img{
     position: absolute;
@@ -319,6 +337,7 @@
     height: 20px;
     left: 210px;
     top: 131px;
+    cursor: pointer;
 }
 .txt_ma{
     position: absolute;

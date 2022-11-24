@@ -48,14 +48,19 @@
                 </div>
                 <div id="Form1" class="tabcontent">
                     <input class="txt_sbn" type="text" id="masb" placeholder="Nhập mã số biên nhận">
-                    <div class="img_ma">
-                        <img src="./asset/image/img_ma.png">
+                    <div class="captcha_code">
+                        <p class="font_captcha" id="code"></p>
                     </div>
                     <div class="vector_change">
                         <img src="./asset/vector/change_vector.png">
                     </div>
-                    <input class="txt_ma" id="name_ma" type="text">
-                    <button type="button" onclick="return ValidateTextBox()" class="btn_search"><i class="fa fa-search"></i> Tra cứu</button>
+                    <!-- onclick="return ValidateTextBox()" -->
+                    <div class="check_captcha">
+                        <input class="txt_ma" id="name_ma" type="text">
+                        <button type="button" 
+                            class="btn_search"><i class="fa fa-search"></i> 
+                            Tra cứu</button>
+                    </div>
                 </div>
                 <div class="clear-shadow"></div>
                 <div id="Form2" class="tabcontent">
@@ -194,16 +199,15 @@
             <a class="text_footer">Bản quyền thuộc Bộ giáo dục và đào tạo</a>
         </div>
     </div>
-    
     <script>
-        function ValidateTextBox() {
-            var masb = document.getElementById("masb");
-            var name_ma = document.getElementById("name_ma"); 
-            if (masb.value == "" || name_ma.value =="") {
-                alert("Please enter!!");
-                return false;
-            }
-        };
+        // function ValidateTextBox() {
+        //     var masb = document.getElementById("masb");
+        //     var name_ma = document.getElementById("name_ma"); 
+        //     if (masb.value == "" || name_ma.value =="") {
+        //         alert("Please enter!!");
+        //         return false;
+        //     }
+        // };
         let slideIndex = 1;
         showSlides(slideIndex);
         function plusSlides(n) {
@@ -277,5 +281,7 @@
                 }
             });
     </script>
+    <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <script src="./asset/captcha.js"></script>
 </body>
 </html>
