@@ -30,8 +30,10 @@ submitBtn.addEventListener('click',() => {
     }
     else if(val === code.textContent) {
         alert('Valid input') ;
+        code.textContent = createCaptcha() ;
     }
     else {
         alert('invalid input !') ;
+        code.textContent = createCaptcha() ;
     }
 }) 
