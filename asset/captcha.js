@@ -36,4 +36,5 @@ submitBtn.addEventListener('click',() => {
         alert('invalid input !') ;
         code.textContent = createCaptcha() ;
     }
+    input.value = "";
 }) 
