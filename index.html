@@ -43,31 +43,23 @@
             </div>
             <div class="form_tc">
                 <div class="tab_1">
-                    <button class="tablinks" onclick="openForm(event, 'Form1')">TRA CỨU HỒ SƠ DVC</button>
-                    <button class="tablinks" onclick="openForm(event, 'Form2')">TRA CỨU DVC TRỰC TUYẾN</button>
+                    <button class="tablinks active" onclick="openForm(event, 'Form1')">TRA CỨU HỒ SƠ DVC</button>
+                    <button class="tablinks " onclick="openForm(event, 'Form2')">TRA CỨU DVC TRỰC TUYẾN</button>
                 </div>
                 <div id="Form1" class="tabcontent">
-                    <input class="txt_sbn" type="text" placeholder="Nhập mã số biên nhận">
+                    <input class="txt_sbn" type="text" id="masb" placeholder="Nhập mã số biên nhận">
                     <div class="img_ma">
                         <img src="./asset/image/img_ma.png">
                     </div>
                     <div class="vector_change">
                         <img src="./asset/vector/change_vector.png">
                     </div>
-                    <input class="txt_ma" type="text">
-                    <button class="btn_search"><i class="fa fa-search"></i> Tra cứu</button>
+                    <input class="txt_ma" id="name_ma" type="text">
+                    <button type="button" onclick="return ValidateTextBox()" class="btn_search"><i class="fa fa-search"></i> Tra cứu</button>
                 </div>
                 <div class="clear-shadow"></div>
                 <div id="Form2" class="tabcontent">
-                    <input class="txt_sbn" type="text" placeholder="Nhập mã số biên nhận">
-                    <div class="img_ma">
-                        <img src="./asset/image/img_ma.png">
-                    </div>
-                    <div class="vector_change">
-                        <img src="./asset/vector/change_vector.png">
-                    </div>
-                    <input class="txt_ma" type="text">
-                    <button class="btn_search"><i class="fa fa-search"></i> Tra cứu</button>
+
                 </div>
             </div> 
             <div class="form_hs">
@@ -204,33 +196,50 @@
     </div>
     
     <script>
+        function ValidateTextBox() {
+            var masb = document.getElementById("masb");
+            var name_ma = document.getElementById("name_ma"); 
+            if (masb.value == "" || name_ma.value =="") {
+                alert("Please enter!!");
+                return false;
+            }
+        };
         let slideIndex = 1;
-            showSlides(slideIndex);
-
-            function plusSlides(n) {
-                showSlides(slideIndex += n);
+        showSlides(slideIndex);
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
             }
 
-            function currentSlide(n) {
-                showSlides(slideIndex = n);
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
             }
-            function showSlides(n) {
-                let i;
-                let slides = document.getElementsByClassName("mySlides");
-                let dots = document.getElementsByClassName("dot");
-                if (n > slides.length) { slideIndex = 1 }
-                if (n < 1) { slideIndex = slides.length }
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+        var myIndex = 0;
+            carousel();
+            function carousel() {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
                 }
-                slideIndex++;
-                if (slideIndex > slides.length) { slideIndex = 1 }
-                for (i = 0; i < dots.length; i++) {
-                    dots[i].className = dots[i].className.replace(" active", "");
-                }
-                slides[slideIndex - 1].style.display = "block";
-                dots[slideIndex - 1].className += " active";
-                setTimeout(showSlides, 5000);
+                myIndex++;
+                if (myIndex > x.length) { myIndex = 1 }
+                x[myIndex - 1].style.display = "block";
+                setTimeout(carousel, 6000); // Change image every 6 seconds
             }
         function openForm(evt, Form) {
                 var i, tabcontent, tablinks;

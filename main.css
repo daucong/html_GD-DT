@@ -109,9 +109,12 @@
     float: right;
     border-style: none;
     flex-direction:column-reverse;
+    cursor: pointer;
 }
-.btn_input_1:active{
+
+.btn_input_1 button:active {
     background: rgba(255, 255, 255, 0.5);
+    color: #11547B;
 }
 .border_1{
     width: 1440px;
@@ -245,7 +248,7 @@
     width: 205px;
     height: 47px;
     float: left;
-    background: #1E73B9;
+    background: rgba(255, 255, 255, 0.5);
     border-radius: 5px;
     position: relative;
     font-family: 'Roboto';
@@ -253,7 +256,7 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
-    color: #FFFFFF;
+    color: #11547B;
     border-style: none;
     transition: 0.3s;
     cursor: pointer;
@@ -261,17 +264,13 @@
     display: block;
     text-transform: uppercase;
 }
-.tab_1 button:hover {
-    background: rgba(255, 255, 255, 0.5);
-    
-}
 .tab_1 button.active {
-    background: rgba(255, 255, 255, 0.5);
-    color: #11547B;
+    background: #006ba5;
+    color: rgb(255, 255, 255);
 }
 .tabcontent {
-    display: none;
     position: relative;
+    display: block;
 }
 .text_tc{
     width: 176px;
@@ -351,6 +350,12 @@
     line-height: 16px;
     border-style: none;
     color: #FFFFFF;
+    cursor: pointer;
+    
+}
+.btn_search:active {
+    background: rgba(255, 255, 255, 0.5);
+    color: #11547B;
 }
 .form_hs{
     position: absolute;
